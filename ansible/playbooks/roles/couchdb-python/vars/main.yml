@@ -1,0 +1,9 @@
+---
+# vars used in tasks
+
+user: "ubuntu" 
+directory: "couchdb-python"
+filename: "{{ directory }}.tar"
+shell_runner_filename: "couchdb-python_runner.sh"
+python_path: "/usr/bin/python"
+pip_path: "/usr/bin/pip"

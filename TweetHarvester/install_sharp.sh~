@@ -1,0 +1,4 @@
+pip install shapely
+sudo apt-get install libgeos-dev
+sudo easy_install pyproj
+

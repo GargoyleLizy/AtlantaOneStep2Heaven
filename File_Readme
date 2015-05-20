@@ -1,0 +1,15 @@
+
+// Team 16 -  Atlanta
+// Student number: 548771 | Student name: Hao DUAN    	| Surname: Duan
+// Student number: 616805 | Student name: Meng LI       | Surname: Li
+// Student number: 650382 | Student name: Ming YU      	| Surname: Chang
+// Student number: 629341 | Student name: Yu SUN        | Surname: Sun
+// Student number: 705077 | Student name: Yuxiang ZHOU  | Surname: Zhou
+// Student number: 656982 | Student name: Zhenya LI    	| Surname: Li
+
+BotoCode: contains the code of boto
+ansible: contains the code of ansible, include playbook,roles, etc
+TweetHarvester: includes the tweetgetter.py which is main tweet harvester, and other supportive functions.
+all_to_1-merge_database: include a remote_to_local.py to sync remote database to local database. And all_to_1.sh which can sync data of all other remote database to local database.
+withoutmap: include the files needed for the web site, includes the html files and test.py which use bottle to set the url page link.
+pythonserver.conf: is a file used to set the web server.

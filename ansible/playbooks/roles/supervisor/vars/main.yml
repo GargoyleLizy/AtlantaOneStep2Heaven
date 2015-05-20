@@ -1,0 +1,15 @@
+---
+
+# System user account and group
+# Used in tasks when set the conf file on remote server
+username: "ubuntu"
+groupname: "ubuntu"
+
+# Used in templates/tweetgetter.conf.j2
+supervisor_task_name: "tweetgetter"
+supervisor_shellexec_dir: "/home/{{ username }}/tweetcode"
+supervisor_shellexec_file: "{{ supervisor_shellexec_dir }}/exec_tweetgetter.sh"
+supervisor_conf_dir: "/etc/supervisor/conf.d"
+supervisor_out_dir: "/home/{{ username }}"
+supervisor_errlog_location: "{{ supervisor_out_dir }}/{{ supervisor_task_name }}.err.log"
+supervisor_outlog_location: "{{ supervisor_out_dir }}/{{ supervisor_task_name }}.out.log"

@@ -1,0 +1,15 @@
+---
+- name: Restart supervisor
+  service:
+    name: supervisor
+    state: restarted
+
+- name: Start supervisor
+  service:
+    name: supervisor
+    state: started
+
+- name: Stop supervisor
+  service:
+    name: supervisor
+    state: stopped

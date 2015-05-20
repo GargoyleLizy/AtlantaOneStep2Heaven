@@ -1,0 +1,41 @@
+---
+# This playbook deploys the oracle JKD8 on the instance
+- name: Update apt cache
+  apt: 
+    update_cache=yes 
+    cache_valid_time=3600
+
+- name: Make sure the java required dependencies are installed
+  apt: 
+    name={{ item }}
+    state=present
+  with_items: 
+    - python-pycurl 
+    - debconf
+    - debconf-utils
+    - python-software-properties
+
+- name: Add webupd8 repository
+  apt_repository: 
+    repo={{ item }} 
+    state=present
+  with_items:
+    - "ppa:webupd8team/java"
+
+- name: Accept Oracle license
+  debconf:
+    name: "{{item}}"
+    setting: "shared/accepted-oracle-license-v1-1"
+    vtype: "select"
+    value: "true"
+  with_items:
+    - oracle-java8-installer
+
+- name: Install JDK8
+  apt:
+    name={{ item }}
+    state=present
+    update_cache=yes
+  with_items: 
+    - oracle-java8-installer
+    - oracle-java8-set-default

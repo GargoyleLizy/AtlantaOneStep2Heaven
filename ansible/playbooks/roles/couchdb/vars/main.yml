@@ -1,0 +1,16 @@
+---
+
+# System user account and group
+# Used in tasks when set the attribute of local.ini on remote server
+couchdb_username: "couchdb"
+couchdb_groupname: "couchdb"
+
+#couchdb_port: '5984'
+
+# Used in templates/local.ini.j2
+couchdb_host_address: "0.0.0.0"
+
+# Used in templates/default.ini.j2
+db_store_location: "/mnt/data"
+couchdb_database_dir: "{{ db_store_location }}/couchdb"
+couchdb_view_index_dir: "{{ db_store_location }}/couchdb"

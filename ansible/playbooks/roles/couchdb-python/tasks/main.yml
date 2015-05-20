@@ -1,0 +1,23 @@
+# install the couchdb-python.tar
+
+- name: Upload couchdb-python package
+  copy:
+    src={{ filename }}
+    dest=/home/{{ user }}
+    owner={{ user }}
+    group={{ user }}
+    mode=0600
+
+- name: Run the shell script
+  script: ../files/{{ shell_runner_filename }}
+
+
+
+
+
+
+
+
+
+
+

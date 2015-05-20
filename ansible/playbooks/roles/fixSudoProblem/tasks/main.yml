@@ -1,0 +1,21 @@
+---
+# Fix the issue of 'sudo: unable to resolve host xxx'
+
+- name: Get the hostname
+  shell: cat /etc/hostname
+  register: _hostname
+
+- name: Modify the /etc/hosts file  --1st line
+  lineinfile:
+    dest=/etc/hosts
+    regexp='^127\.0\.0\.1'
+    line='127.0.0.1 localhost localhost.localdomain {{ _hostname['stdout'] }}'
+    owner=root
+    group=root
+    mode=0644
+
+- name: Modify the /etc/hosts file  --2nd line
+  lineinfile:
+    dest=/etc/hosts
+    line='127.0.1.1 ubuntu.localhost  ubuntu'
+

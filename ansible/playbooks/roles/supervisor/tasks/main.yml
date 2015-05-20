@@ -1,0 +1,23 @@
+---
+# Install supervisor, configure supervisor
+
+- name: Install supervisor
+  apt:
+    name=supervisor
+    state=present
+
+- name: Configure supervisor 
+  template:
+    src=supervisor_conf.j2
+    dest={{ supervisor_conf_dir }}/{{ supervisor_task_name }}.conf
+    owner=root
+    group=root
+    mode=0644
+  notify:
+    - Restart supervisor
+
+- name: Ensure the supervisor is started
+  service:
+    name=supervisor
+    state=started
+    enabled=yes

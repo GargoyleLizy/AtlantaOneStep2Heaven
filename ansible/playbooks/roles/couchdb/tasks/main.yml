@@ -1,0 +1,107 @@
+---
+
+- name: Install CouchDB
+  apt:
+    name=couchdb
+    state=present
+
+- name: Make db_store directory
+  file:
+    path={{ couchdb_database_dir }}
+    state=directory
+    # owner={{ couchdb_username }}
+    # group={{ couchdb_groupname }}
+    # mode=0644 
+
+# - name: Modify /etc/couchdb/local.ini--port
+#   lineinfile:
+#     dest=/etc/couchdb/local.ini
+#     regexp='^\[httpd\]$'
+#     line='[httpd]\nport = 5984'
+#     state=present
+#     backup=yes 
+
+
+- name: Modify /etc/couchdb/local.ini--port
+  lineinfile:
+    dest=/etc/couchdb/local.ini
+    regexp='^;port'
+    insertafter="[httpd]"
+    line='port = 5984'
+    state=present
+    backup=yes 
+
+# - name: Modify /etc/couchdb/local.ini--bind_address
+#   lineinfile:
+#     dest=/etc/couchdb/local.ini
+#     regexp='^\[httpd\]$'
+#     line='[httpd]\nbind_address = 0.0.0.0'
+#     state=present
+
+- name: Modify /etc/couchdb/local.ini--bind_address
+  lineinfile:
+    dest=/etc/couchdb/local.ini
+    regexp='^;bind_address'
+    insertafter="port"
+    line='bind_address = 0.0.0.0'
+    state=present
+
+
+
+# - name: Modify /etc/couchdb/local.ini--database_dir
+#   lineinfile:
+#     dest=/etc/couchdb/local.ini
+#     regexp='^\[couchdb\]$'
+#     line='[couchdb]\ndatabase_dir = {{ couchdb_database_dir }}'
+#     state=present
+
+
+
+- name: Modify /etc/couchdb/local.ini--database_dir
+  lineinfile:
+    dest=/etc/couchdb/local.ini
+    regexp='^database_dir'
+    insertafter="^uuid"
+    line='database_dir = /mnt/data/couchdb\nview_index_dir = /mnt/data/couchdb'
+    state=present
+
+
+# - name: Modify /etc/couchdb/local.ini--view_index_dir
+#   lineinfile:
+#     dest=/etc/couchdb/local.ini
+#     regexp='^\[couchdb\]$'
+#     line='[couchdb]\nview_index_dir = {{ couchdb_view_index_dir }}'
+#     state=present
+
+# - name: Chang the alias of the database_dir directory
+#   lineinfile:
+#     dest=/etc/apparmor.d/tunables/alias
+#     regexp=''
+#     insertafter=EOF
+#     line='alias /var/lib/couchdb -> {{ couchdb_database_dir }},'
+
+# - name: Copy original couchdb directory
+#   shell: cp -R -p /var/lib/couchdb {{ couchdb_database_dir }}
+
+
+- name: Chang the alias of the database_dir directory
+  lineinfile:
+    dest=/etc/apparmor.d/tunables/alias
+    regexp=''
+    insertafter=EOF
+    line='alias /var/lib/couchdb -> /mnt/data/couchdb,'
+
+- name: Copy original couchdb directory
+  shell: cp -R -p /var/lib/couchdb /mnt/data/couchdb
+
+
+- name: Retart CouchDB
+  service:
+    name=couchdb
+    state=restarted
+
+
+
+
+
+

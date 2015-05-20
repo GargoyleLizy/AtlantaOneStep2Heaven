@@ -1,0 +1,24 @@
+---
+# Upload the source code needed to exec on instances
+
+- name: Upload the source code zip package
+  copy:
+    src=tweetcode.tar
+    dest=/home/ubuntu
+    owner=ubuntu
+    group=ubuntu
+    mode=0644
+
+# - name: Upload the shell file
+#   copy:
+#     src=sourcecodezip_runner.sh
+#     dest=/home/ubuntu
+#     owner=ubuntu
+#     group=ubuntu
+#     mode=0644
+
+- name: Run shell script
+  script: ../files/sourcecodezip_runner.sh
+
+# - name: Get permission
+#   shell: sudo chmod +x /home/ubuntu/tweetcode/exec_tweetgetter.sh

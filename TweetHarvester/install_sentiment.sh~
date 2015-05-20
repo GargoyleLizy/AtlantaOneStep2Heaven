@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo apt-get install wget
+wget http://www.clips.ua.ac.be/media/pattern-2.6.zip
+unzip pattern-2.6.zip
+cd pattern-2.6
+sudo python setup.py install

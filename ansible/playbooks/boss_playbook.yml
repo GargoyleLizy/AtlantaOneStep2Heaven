@@ -1,0 +1,16 @@
+# Run this playbook, then deploy all the services needed
+- name: Deploy the new instance
+  hosts: tweetservers
+  sudo: yes
+
+  roles:
+    - fixSudoProblem
+    - mountVolume
+    - deployBasicServices
+    - oracleJDK8
+    - couchdb
+    - couchdb-python
+    - uploadSourcecode
+    - supervisor
+
+  

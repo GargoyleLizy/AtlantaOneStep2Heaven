@@ -1,0 +1,17 @@
+---
+# Mount volume to the new instance
+
+- name: Format the new volume
+  shell: sudo mkfs.ext4 /dev/vdc
+
+- name: Make directory /mnt/data
+  file: 
+    path=/mnt/data
+    state=directory
+    
+- name: Mount
+  shell: sudo mount /dev/vdc /mnt/data
+
+- name: Get permission
+  shell: sudo chown -R ubuntu /mnt/data
+

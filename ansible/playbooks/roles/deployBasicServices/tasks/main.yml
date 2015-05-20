@@ -1,0 +1,60 @@
+---
+# This playbook deploys the following services on the instances
+#   python-dev, python-pip, git, couchdb, curl, apache2
+#   tweepy, TwitterAPI, pattern
+#   13.5.2015 shapely, libgeos-dev, pyproj
+
+- name: Update apt cache
+  apt: 
+    update_cache=yes 
+    cache_valid_time=3600
+
+
+- name: Install python-dev python-pip git curl apache2 unzip libgeos-dev
+  apt: 
+    name={{ item }} 
+    state=present 
+    force=yes
+  with_items: 
+    - python-dev
+    - python-pip
+    - git
+    - curl
+    - apache2
+    - unzip
+    - libgeos-dev
+    - python-bottle
+  notify:
+    - Start apache2
+
+- name: Fix pip BUG
+  shell: easy_install -U pip
+
+- name: Install tweepy TwitterAPI pattern shapely
+  pip: 
+    name={{ item }}
+  with_items:
+    - tweepy
+    - TwitterAPI
+    - pattern
+    - shapely
+
+- name: Install pyproj
+  easy_install:
+    name={{ item }}
+  with_items:
+    - pyproj
+
+- name: Copy pythonserver.conf file to VMs
+  copy:
+    src=../files/pythonserver.conf
+    dest=/etc/init/pythonserver.conf
+  notify:
+    - Start pythonserver
+
+- name: Execute cors.sh 
+  script: ../files/cors.sh
+
+
+
+

@@ -1,0 +1,7 @@
+[program:{{ supervisor_task_name }}]
+command=/bin/bash {{ supervisor_shellexec_file }}
+directory={{ supervisor_shellexec_dir }}
+autostart=true
+autorestart=false
+stderr_logfile={{ supervisor_errlog_location }}
+stdout_logfile=NONE
