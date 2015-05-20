@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<!-- // Team 16 -  Atlanta
+
+// Student number: 548771 | Student name: Hao DUAN	| Surname: Duan
+// Student number: 616805 | Student name: Meng LI  		| Surname: Li
+// Student number: 650382 | Student name: Ming YU  	| Surname: Chang
+// Student number: 629341 | Student name: Yu SUN   		| Surname: Sun
+// Student number: 705077 | Student name: Yuxiang ZHOU 	| Surname: Zhou
+// Student number: 656982 | Student name: Zhenya LI	| Surname: Li -->
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>Team16 | Film</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<link rel="icon" type="image/png" href="static/images/favicon.ico">
+	
+	<link rel="stylesheet" href="static/css/style.css" media="screen" />
+	
+	<!-- HTML5 Shiv + detect touch events -->
+	<script src="static/js/modernizr.custom.js"></script>
+
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAUp8jbEBYbF8fEszgTtCJUowIrK6KKV3U">
+        </script>
+        <script type="text/javascript" src="http://geoxml3.googlecode.com/svn/branches/polys/geoxml3.js">
+        </script>
+        <script src="static/js/index.js"></script>
+        <script src="static/js/film.js"></script>
+        <!-- ECHART-->
+        <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script> 
+        <script type="text/javascript">
+
+        </script>
+
+
+</head>
+<body class="liquid light" onload="film()">
+
+<div id="wrapper">
+
+	
+	<!-- ***************** - Header Top - ***************** -->	
+	
+	<div id="header-top" class="clearfix">
+		
+		<section class="container clearfix">
+			
+			<div class="one-half">
+				
+				<ul class="contact-info clearfix">
+					<a class="left" href="#"><img src="static/images/uniicon.png" title="University of Melbourne" alt="University of Melbourne" /></a>
+				</ul><!--/ .contact-info-->	
+				
+			</div><!--/ .one-half-->
+			
+			<div  class="one-half last">
+
+
+			</div><!--/ .one-fourth.last-->
+			
+		</section><!--/ .container-->
+		
+		<a href="#" id="more"></a>
+		
+	</div><!--/ #header-top-->
+	
+
+	<div id="header-top" class="clearfix"></div>
+	<!-- ***************** - END Header Top - ***************** -->
+
+
+	<!-- ***************** - Container - ***************** -->
+	
+	<section class="container">
+
+
+		<!-- ***************** - Header - ***************** -->
+		
+		<header id="header" class="clearfix">
+			
+			<div id="logo">
+			    <a class="left" href="#"><img src="static/images/logo.png" title="cluster" alt="cluster" /></a>
+			</div><!--/ #logo-->
+			
+			<nav id="navigation" class="navigation">
+				<ul>
+					<li><a href="index.html">Home</a>
+					</li>
+					<li class="current"><a href="Scenario.html">Scenario</a>
+						<ul>
+							<li><a href="tweetusage.html">Twitter & Activity</a></li>
+							<li><a href="film.html">Film</a></li>
+							<li><a href="sport.html">Sport</a>
+								<ul>
+									<li><a href="nba.html">NBA & Emotion</a></li>
+								</ul>
+							</li>
+							<li><a href="map.html">Map Analysis</a>
+								<ul>
+									<li><a href="headmap.html">Heat Table Twitter</a></li>
+									<li><a href="travelmap.html">Travel Route</a></li>
+									<li><a href="map.html">Top 5 Topics</a></li>
+									<li><a href="languagedis.html">Language Distribution</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="Team.html">Team</a></li>
+					<li><a href="Reference.html">Support</a></li>
+				</ul>
+			</nav><!--/ #navigation-->
+			
+		</header><!--/ #header-->
+		
+		<!-- **************** - end Header - **************** -->
+  <div class="content-wrapper sbr clearfix">
+     <div id="content">
+         <h1 class="content-title">Films Perference</h1>
+	
+				<!-- ************* - end Divider - **************** -->
+			&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<a href="#filmstartl" class="button-style-2 small" onmouseover="film()">Film Attention</a> &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+
+			
+
+			<table style="width:100%;"><tr><td>
+				<p class="one-half">
+				<br>
+
+					This scenario presents <span class="highlight3"> the Films Perference</span> in Atlanta.</br>
+					Actually, There are 6 movies on-line in theaters.</br>
+					1.  Mad Max: Fury Road</br>
+					2.  Avengers: Age of Ultron</br>
+					3.  Pitch Perfect 2</br>
+					4.  Fast and Furious 7</br>
+					5.  Hot Pursuit</br>
+					6.  The Age of Adaline</br>
+					<br>
+					Actually, we attempt to figure out the tweets which involves some keywords of each films.</br>
+					Unfortunately, there are lack of some data of films, due to not enought data. </br>
+					<br>
+					In addition, we attempt to insight one of those films further. The Avengers. </br>
+					How people love it or dislike it? and which hero is the favorious in Atlanta People's Heart</br>
+					<br>
+					To be more specific, click below bottom.</br>
+
+				</p>
+			<div id="filmstartl" style="height:400px;overflow:auto" class= "one-half last"> </div>
+
+			</td>
+			</tr>			
+			</table>
+
+			<div class="divider"></div>
+
+			<div class="divider"></div>				
+			 &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  <a href="#filmpiep" class="button-style-2 small" onmouseover="filmpie()">Altitude</a> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="#filmbarp" class="button-style-2 small" onmouseover="filmbar()">Favorite</a> &nbsp; &nbsp; &nbsp; &nbsp;				
+
+			<table style="width:100%;"><tr><td>
+							<p id="main2"></p>
+			<div id="filmpiep" style="height:400px;overflow:auto" class= "one-half"> </div>
+			<div id="filmbarp" style="height:400px;overflow:auto" class= "one-half last"> </div>
+
+
+			</td>
+			</tr>
+
+			
+			</table>
+        </div>
+    </div>
+<!-- 			<iframe src="show_Atlanta.html" width="100%" height="100%"></iframe> -->
+
+
+
+<!--/ .content-wrapper-->
+
+
+		<!-- ************* - Main Footer - *************** -->
+		
+		<footer id="footer" class="clearfix">
+			
+			<div class="one-half">
+				
+				<nav id="footer-nav" class="clearfix">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="Scenario.html">Scenario</a></li>
+						<li><a href="Team.html">Team</a></li>
+						<li><a href="Reference.html">Support</a></li>			
+					</ul>
+				</nav><!--/ #footer-nav-->
+				
+				<div class="copyright">Enjoy~</div>
+				
+			</div><!--/ .one-half-->
+			
+
+			<div class="one-half last">
+				
+				<ul data-description="&copy; Team16.   All rights reserved." class="social-links">
+			
+				</ul>
+				
+			</div><!--/ .one-half.last-->
+			
+		</footer>
+		
+		<!-- ************ - end Footer - ************ -->	
+
+
+	</section><!--/ .container-->
+	
+
+	<!-- *************** - end Container - *************** -->
+
+
+	<!-- ************ - Footer Bottom - ************ -->
+	
+	<footer id="footer-bottom">
+
+		<a href="#" id="footer-more"></a>
+
+		<section class="container panel clearfix">
+
+			<div class="one-third">
+				<div class="widget-text">
+					<h1 class="content-title">University of Melbourne</h1>
+					<div class="aligncenter-with-title">
+						<img src="static/images/bigmeluni2.png" alt="" />
+						<h5 class="title"></h5>
+					</div>
+				</div><!--/ .widget-text-->
+			</div><!--/ .one-third-->
+
+			<div class="one-third">
+				<div class="widget-text">
+					<div style="height:400px;width:300px; overflow:auto"></div>
+				</div><!--/ .widget-text-->
+			</div><!--/ .one-third-->
+
+			<div class="one-third last">
+				<div class="widget-text">
+					<h1 class="content-title">Professor</h1>
+					<div class="aligncenter-with-title">
+						<img src="static/images/rich-pic.jpg" alt="" />
+						<h5 class="title">Richard Sinnott</h5>
+					</div>
+				</div><!--/ .widget-flickr-->
+			</div><!--/ .one-third-->
+
+
+		</section><!--/ .container-->
+	</footer><!--/ #footer-bottom-->
+	
+	<!-- ************ - end Footer - ************ -->
+
+
+
+</div><!--/ #wrapper-->
+
+<script type="text/javascript" src="static/../../ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="static/js/jquery-1.7.1.min.js"><\/script>')</script>
+<!--[if lt IE 9]>
+	<script src="static/js/selectivizr-and-extra-selectors.min.js"></script>
+	<script src="static/../../ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+<![endif]-->
+<script src="static/js/respond.min.js"></script>
+<script src="static/js/jquery.easing-1.3.min.js"></script>
+<script src="static/js/custom.js"></script>
+<script src="static/themeChanger/js/colorpicker.js"></script>
+<script src="static/themeChanger/js/themeChanger.js"></script>
+
+
+
+<!-- analysis chart ############################################################################## -->
+
+
+
+
+
+</body>
+</html>
+
